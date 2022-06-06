@@ -530,7 +530,7 @@ pub use log_unstable::Unstable;
 pub use quorum::joint::Configuration as JointConfig;
 pub use quorum::majority::Configuration as MajorityConfig;
 pub use raft_log::{RaftLog, NO_LIMIT};
-pub use raft_proto::eraftpb;
+pub use raft_proto::*;
 #[allow(deprecated)]
 pub use raw_node::is_empty_snap;
 pub use raw_node::{LightReady, Peer, RawNode, Ready, SnapshotStatus};
