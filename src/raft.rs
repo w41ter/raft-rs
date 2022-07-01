@@ -1709,6 +1709,9 @@ impl<T: Storage> Raft<T> {
             }
         };
         pr.recent_active = true;
+        if pr.might_lost {
+            pr.might_lost = false;
+        }
 
         // update followers committed index via append response
         pr.update_committed(m.commit);
@@ -1826,6 +1829,9 @@ impl<T: Storage> Raft<T> {
         // update followers committed index via heartbeat response
         pr.update_committed(m.commit);
         pr.recent_active = true;
+        if pr.might_lost {
+            pr.might_lost = false;
+        }
         pr.resume();
 
         // free one slot for the full inflights window to allow progress.

@@ -345,6 +345,8 @@ impl ProgressTracker {
                 // by actual ids instead of count.
                 active.insert(*id);
                 pr.recent_active = false;
+            } else if !pr.might_lost {
+                pr.might_lost = true;
             }
         }
         self.has_quorum(&active)
