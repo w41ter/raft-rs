@@ -13,7 +13,7 @@ categories = ["algorithms", "database-implementations"]
 build = "build.rs"
 
 [features]
-default = ["protobuf-codec"]
+default = ["prost-codec"]
 protobuf-codec = ["protobuf-build/protobuf-codec", "bytes", "protobuf/bytes"]
 prost-codec = ["protobuf-build/prost-codec", "prost", "lazy_static"]
 
@@ -23,5 +23,5 @@ protobuf-build = { version = "0.13", default-features = false, git = "https://gi
 [dependencies]
 bytes = { version = "1", optional = true }
 lazy_static = { version = "1", optional = true }
-prost = { version = "0.10", optional = true }
+prost = { version = "0.11", optional = true }
 protobuf = "2"
